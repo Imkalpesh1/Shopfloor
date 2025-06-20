@@ -15,14 +15,14 @@ const MachineCategory = require('./models/MachineCategory');
 const AdditionalControls = require('./models/AdditionalControls');
 
 const syncDatabase = async () => {
-  try {
-    await sequelize.sync({ force: false }); // Create tables if not exist
-    console.log('✅ Tables synced successfully.');
-  } catch (error) {
-    console.error('❌ Sync error:', error);
-  } finally {
-    await sequelize.close();
-  }
+  await sequelize.sync({ force: false });
+  console.log('✅ Tables synced successfully.');
+  await sequelize.close();
 };
+
+syncDatabase().catch((error) => {
+  console.error('❌ Sync error:', error);
+});
+
 
 syncDatabase();
