@@ -1,6 +1,8 @@
-// db.js
-require('dotenv').config();
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') });
 const { Sequelize } = require('sequelize');
+
+// Optional: Log DB host to ensure env loaded
+console.log('DB_HOST:', process.env.DB_HOST);
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -8,8 +10,8 @@ const sequelize = new Sequelize(
   process.env.DB_PASS,
   {
     host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT || 'mssql',
-    port: process.env.DB_PORT || 1433,
+    dialect: 'mssql',
+    port: parseInt(process.env.DB_PORT, 10) || 1433,
     dialectOptions: {
       options: {
         encrypt: true,
@@ -20,15 +22,14 @@ const sequelize = new Sequelize(
   }
 );
 
+// Optional: export test connection separately
 const testConnection = async () => {
   try {
     await sequelize.authenticate();
-    console.log('✅ Connection has been established successfully.');
+    console.log('✅ Connection established successfully.');
   } catch (error) {
-    console.error('❌ Unable to connect to the database:', error);
+    console.error('❌ Database connection failed:', error.message);
   }
 };
 
-testConnection();
-
-module.exports = sequelize;
+module.exports = { sequelize, testConnection };
