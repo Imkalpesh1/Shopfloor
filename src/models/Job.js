@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const ListArea = sequelize.define('ListArea', {
+const Job = sequelize.define('Job', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const ListArea = sequelize.define('ListArea', {
     allowNull: false,
   },
 }, {
-  tableName: 'ListAreaMaster', // actual table name in database
+  tableName: 'JobMaster', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = ListArea;
+module.exports = Job;

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const AdditionalControls = sequelize.define('AdditionalControls', {
+const ListArea = sequelize.define('ListArea', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const AdditionalControls = sequelize.define('AdditionalControls', {
     allowNull: false,
   },
 }, {
-  tableName: 'AdditionalControls', // actual table name in database
+  tableName: 'ListAreaMaster', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = AdditionalControls;
+module.exports = ListArea;

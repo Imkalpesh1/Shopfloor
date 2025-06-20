@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const MachineCategory = sequelize.define('MachineCategory', {
+const TypeOfLiftingtool = sequelize.define('TypeOfLiftingtool', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const MachineCategory = sequelize.define('MachineCategory', {
     allowNull: false,
   },
 }, {
-  tableName: 'MachineCategory', // actual table name in database
+  tableName: 'TypeOfLiftingtool', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = MachineCategory;
+module.exports = TypeOfLiftingtool;

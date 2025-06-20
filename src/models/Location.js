@@ -1,6 +1,6 @@
 // models/ListArea.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 const ListArea = require('./ListArea'); 
 
 const Location = sequelize.define('Location', {

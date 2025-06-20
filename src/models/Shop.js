@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const TypeOfCrane = sequelize.define('TypeOfCrane', {
+const Shop = sequelize.define('Shop', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const TypeOfCrane = sequelize.define('TypeOfCrane', {
     allowNull: false,
   },
 }, {
-  tableName: 'TypeOfCrane', // actual table name in database
+  tableName: 'ShopMaster', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = TypeOfCrane;
+module.exports = Shop;

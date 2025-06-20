@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const TypeOfLiftingtool = sequelize.define('TypeOfLiftingtool', {
+const TypeOfCrane = sequelize.define('TypeOfCrane', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const TypeOfLiftingtool = sequelize.define('TypeOfLiftingtool', {
     allowNull: false,
   },
 }, {
-  tableName: 'TypeOfLiftingtool', // actual table name in database
+  tableName: 'TypeOfCrane', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = TypeOfLiftingtool;
+module.exports = TypeOfCrane;

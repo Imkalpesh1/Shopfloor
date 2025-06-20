@@ -1,5 +1,5 @@
 // sync.js
-const sequelize = require('./db');
+const sequelize = require('../config/db');
 const UserRole = require('./models/UserRole');
 const User = require('./models/User');
 const Hotwork = require('./models/HotWork');

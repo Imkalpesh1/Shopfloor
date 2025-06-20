@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
-const Category = require('./Activity');
+const sequelize = require('../config/db');
 
-const ChecklistCategory = sequelize.define('ChecklistCategory', {
+const AdditionalControls = sequelize.define('AdditionalControls', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,18 +11,14 @@ const ChecklistCategory = sequelize.define('ChecklistCategory', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  ck_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   flag: {
     type: DataTypes.INTEGER,
     defaultValue: 0,
     allowNull: false,
   },
 }, {
-  tableName: 'ChecklistCategory', // actual table name in database
+  tableName: 'AdditionalControls', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = ChecklistCategory;
+module.exports = AdditionalControls;

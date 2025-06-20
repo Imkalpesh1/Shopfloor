@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const Job = sequelize.define('Job', {
+const MachineCategory = sequelize.define('MachineCategory', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,8 +17,8 @@ const Job = sequelize.define('Job', {
     allowNull: false,
   },
 }, {
-  tableName: 'JobMaster', // actual table name in database
+  tableName: 'MachineCategory', // actual table name in database
   timestamps: false,      // disables createdAt and updatedAt
 });
 
-module.exports = Job;
+module.exports = MachineCategory;

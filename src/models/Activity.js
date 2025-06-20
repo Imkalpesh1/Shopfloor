@@ -1,8 +1,7 @@
-// models/UserRole.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../config/db');
 
-const UserRole = sequelize.define('UserRole', {
+const Activity = sequelize.define('Activity', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,13 +11,13 @@ const UserRole = sequelize.define('UserRole', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  role_id: {
-    type: DataTypes.STRING,
+  category: {
+    type: DataTypes.STRING, // or ENUM if limited categories
     allowNull: false,
   },
 }, {
-  tableName: 'UserRoleMaster',
+  tableName: 'ActivityMaster',
   timestamps: false,
 });
 
-module.exports = UserRole;
+module.exports = Activity;
