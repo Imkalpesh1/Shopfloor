@@ -11,8 +11,9 @@ const Activity = sequelize.define('Activity', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  category: {
-    type: DataTypes.STRING, // or ENUM if limited categories
+  flag: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
     allowNull: false,
   },
 }, {

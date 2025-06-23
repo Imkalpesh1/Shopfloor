@@ -17,8 +17,8 @@ const TypeOfPermit = sequelize.define('TypeOfPermit', {
     allowNull: false,
   },
 }, {
-  tableName: 'PermitMaster', // actual table name in database
-  timestamps: false,      // disables createdAt and updatedAt
+  tableName: 'PermitMaster', 
+  timestamps: false,      
 });
 
 module.exports = TypeOfPermit;
